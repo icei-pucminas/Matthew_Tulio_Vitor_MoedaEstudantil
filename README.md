@@ -1,12 +1,12 @@
 # TÍTULO DO PROJETO
 
-`CURSO`
+`Engenharia de Software`
 
-`DISCIPLINA`
+`Laboratorio de projeto de software`
 
-`SEMESTRE`
+`Primeiro semestre`
 
-Descrever resumidamente, em um ou dois parágrafos, o projeto que está sendo desenvolvido.
+
 
 ## Integrantes
 
@@ -17,7 +17,7 @@ Descrever resumidamente, em um ou dois parágrafos, o projeto que está sendo de
 
 ## Orientador
 
-* Nome completo do professor 1
+* Jose Laerte
 
 ## Instruções de utilização
 
