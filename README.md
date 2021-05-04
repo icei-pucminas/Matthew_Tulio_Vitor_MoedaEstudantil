@@ -10,10 +10,10 @@
 
 ## Integrantes
 
-* Nome completo do aluno 1
-* Nome completo do aluno 2
-* Nome completo do aluno 3
-* Nome completo do aluno 4
+* Matthew Rachid
+* Túlio Bolognani
+* Vitor Marcondes
+
 
 ## Orientador
 
