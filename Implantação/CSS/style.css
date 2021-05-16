@@ -1,0 +1,21 @@
+body {
+  background: rgb(10, 231, 3);
+}
+.container {
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+
+.quadro-cadastro {
+  display: flex;
+  width: 30rem;
+  background-color: white;
+  border-radius: 10px;
+  padding: 20px;
+  border: 5px solid black;
+}
+.quadro-cadastro input {
+  display: block;
+}
