@@ -4,6 +4,7 @@ body {
 .container {
   display: flex;
   height: 100vh;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
@@ -56,8 +57,30 @@ body {
   cursor: pointer;
   font-size: 20px;
   margin-top: 20px;
-  margin-bottom: 20px;
+
   color: rgb(10, 231, 3);
   font-family: "Bebas Neue", cursive;
   background: black;
+}
+.container2 {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.quadro-sucesso {
+  color: white;
+  margin-top: 10px;
+}
+button {
+  background: none;
+  outline: none;
+  border: none;
+}
+button a {
+  text-decoration: none;
+  cursor: pointer;
+  font-size: 20px;
+  margin-bottom: 20px;
+  color: rgb(10, 231, 3);
+  font-family: "Bebas Neue", cursive;
 }

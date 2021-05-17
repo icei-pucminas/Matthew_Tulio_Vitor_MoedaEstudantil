@@ -18,16 +18,15 @@
 
     <div class="container">
         <div class="quadro-cadastro">
-            <form action="/php/cadastro.php" method="post">
-
+            <form action="" method="post">
 
                 <label for="login">Login</label>
                 <input name="login" id="login" type="text">
                 <label for="senha">Senha</label>
                 <input name="senha" id="senha" type="password">
 
-                <button><a href="/php/listagem_alunos.php">Entrar</a></button>
-                <button><a href="/php/cadastro.php">Cadastrar-se</a></button>
+                <button type="submit"><a href="/php/view/listagem_alunos_view.php">Entrar</a></button>
+                <button><a href="/php/view/cadastro_view.php">Cadastrar-se</a></button>
             </form>
         </div>
     </div>
