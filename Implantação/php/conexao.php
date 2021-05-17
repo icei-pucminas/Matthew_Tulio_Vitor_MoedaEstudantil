@@ -1,5 +1,7 @@
 <?php
-define('HOST', '127.0.0.1');
-define('USUARIO', 'root');
-define('SENHA', '');
-define('DB', 'alunos');
+
+$host = 'localhost';
+$user = 'root';
+$password = '';
+$database = 'moeda_estudantil';
+$conexao = mysqli_connect($host, $user, $password, $database);

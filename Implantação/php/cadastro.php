@@ -1,8 +1,22 @@
 <?php
 
+include("conexao.php");
 
-$nome = addslashes($_POST['name']);
+$usuario = addslashes($_POST['usuario']);
+$email = addslashes($_POST['email']);
 $cpf = addslashes($_POST['cpf']);
 $rg =  addslashes($_POST['rg']);
+$endereco = addslashes($_POST['endereco']);
+$instituicao = addslashes($_POST['instituicao']);
+$curso = addslashes($_POST['curso']);
 
-echo $nome;
+echo $usuario;
+echo $email;
+echo $cpf;
+echo $rg;
+echo $endereco;
+echo $instituicao;
+echo $curso;
+
+$sql = "insert into usuario (LOGIN, NOME, SENHA) values (15482,'matthew','231','123','teste','teste')";
+$salvar = mysqli_query($conexao, $sql);
