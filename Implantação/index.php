@@ -19,30 +19,19 @@
     <div class="container">
         <div class="quadro-cadastro">
             <form action="/php/cadastro.php" method="post">
-                <h2>Cadastro de alunos</h2>
 
-                <label for="usuario">Nome</label>
-                <input name="usuario" id="usuario" type="text">
-                <label for="email">Email</label>
-                <input name="email" id="email" type="text">
-                <label for="cpf">CPF</label>
-                <input name="cpf" id="cpf" type="text">
-                <label for="rg">RG</label>
-                <input name="rg" id="rg" type="text">
 
-                <label for="endereco">Endereco</label>
-                <input name="endereco" id="endereco" type="text">
-                <label for="instituicao">Instituição de ensino</label>
-                <input name="instituicao" id="instituicao" type="text">
-                <label for="curso">Curso</label>
-                <input name="curso" id="curso" type="text">
-                <input type="submit" value="Cadastrar">
+                <label for="login">Login</label>
+                <input name="login" id="login" type="text">
+                <label for="senha">Senha</label>
+                <input name="senha" id="senha" type="password">
+
+                <button><a href="/php/listagem_alunos.php">Entrar</a></button>
+                <button><a href="/php/cadastro.php">Cadastrar-se</a></button>
             </form>
         </div>
     </div>
-    <script>
 
-    </script>
 </body>
 
 </html>
