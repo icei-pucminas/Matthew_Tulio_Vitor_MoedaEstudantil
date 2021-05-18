@@ -1,6 +1,6 @@
 <?php
 
-include("/xampp/htdocs/php/controller/conexao.php");
+require_once("/xampp/htdocs/php/controller/conexao.php");
 require_once("/xampp/htdocs/php/model/Usuario.php");
 require_once("/xampp/htdocs/php/model/Aluno.php");
 $cont = arquivo();
@@ -18,7 +18,7 @@ if ((isset($_POST['enviar']))) {
     $curso = addslashes($_POST['curso']);
 
 
-    $sql = "insert into usuario (LOGIN, NOME, SENHA) values (' $login','$nome;','$senha')";
+    $sql = "insert into usuario (LOGIN, NOME, SENHA) values (' $login','$nome','$senha')";
     $salvar = mysqli_query($conexao, $sql);
     $sql2 = "insert into aluno (LOGIN_USUARIO, CURSO, ENDERECO, RG, EMAIL, CPF) values ('$login','$curso','$endereco','$rg','$email','$cpf')";
     $salvar2 = mysqli_query($conexao, $sql2);
