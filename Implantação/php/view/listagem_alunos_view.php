@@ -28,6 +28,7 @@ include("/xampp/htdocs/php/controller/consulta_aluno.php")
                 <th>RG</th>
                 <th>ENDERECO</th>
                 <th>CURSO</th>
+                <th>MOEDAS</th>
             </tr>
             <?php while ($dado = $con->fetch_array()) { ?>
                 <tr>
@@ -36,6 +37,7 @@ include("/xampp/htdocs/php/controller/consulta_aluno.php")
                     <td><?php echo $dado["RG"]; ?></td>
                     <td><?php echo $dado["ENDERECO"]; ?></td>
                     <td><?php echo $dado["CURSO"]; ?></td>
+                    <td><?php echo $dado["MOEDAS"]; ?></td>
                 </tr>
             <?php } ?>
         </table>
