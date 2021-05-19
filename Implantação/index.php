@@ -12,6 +12,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="/Assets/moeda.png" />
 </head>
 
 <body>
@@ -21,9 +22,9 @@
             <form action="" method="post">
 
                 <label for="login">Login</label>
-                <input name="login" id="login" type="text">
+                <input required name="login" id="login" type="text">
                 <label for="senha">Senha</label>
-                <input name="senha" id="senha" type="password">
+                <input required name="senha" id="senha" type="password">
 
                 <button type="submit"><a href="/php/view/listagem_alunos_view.php">Entrar</a></button>
                 <button><a href="/php/view/cadastro_view.php">Cadastrar-se</a></button>

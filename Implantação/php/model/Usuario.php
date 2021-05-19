@@ -1,17 +1,19 @@
 <?php
-require "Aluno.php";
+
 class Usuario
 {
     //login: int, nome: string, senha: string
     private $login;
     private $nome;
     private $senha;
+    private $setado;
 
     public function __construct($login, $nome, $senha)
     {
         $this->login = $login;
         $this->nome = $nome;
         $this->senha = $senha;
+        $this->setado = true;
     }
 
     public function getLogin()
@@ -39,5 +41,9 @@ class Usuario
     public function setSenha($senha)
     {
         $this->senha = $senha;
+    }
+    public function getSetado()
+    {
+        return $this->setado;
     }
 }

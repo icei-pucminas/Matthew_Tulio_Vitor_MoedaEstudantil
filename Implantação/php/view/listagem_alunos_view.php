@@ -14,6 +14,7 @@ include("/xampp/htdocs/php/controller/consulta_aluno.php")
     <link rel="stylesheet" href="/CSS/listagem_alunos.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="/Assets/moeda.png" />
 
 </head>
 

@@ -3,28 +3,28 @@
 require_once("/xampp/htdocs/php/controller/conexao.php");
 require_once("/xampp/htdocs/php/model/Usuario.php");
 require_once("/xampp/htdocs/php/model/Aluno.php");
-$cont = arquivo();
-$login = strval($cont) . "221";
+require_once("/xampp/htdocs/php/controller/usuario_controller.php");
+require_once("/xampp/htdocs/php/controller/aluno_controller.php");
 
+$login = arquivo_login();
+cadastrar_usuario_login();
 
-if ((isset($_POST['enviar']))) {
-    $nome = addslashes($_POST['nome']);
-    $senha = addslashes($_POST['senha']);
-    $email = addslashes($_POST['email']);
-    $cpf = addslashes($_POST['cpf']);
-    $rg =  addslashes($_POST['rg']);
-    $endereco = addslashes($_POST['endereco']);
-    $instituicao = addslashes($_POST['instituicao']);
-    $curso = addslashes($_POST['curso']);
+function cadastrar_usuario_login()
+{
+    if (isset($_POST['enviar'])) {
+        $usuario = criarUsuario();
+        $aluno = criarAluno();
 
-
-    $sql = "insert into usuario (LOGIN, NOME, SENHA) values (' $login','$nome','$senha')";
-    $salvar = mysqli_query($conexao, $sql);
-    $sql2 = "insert into aluno (LOGIN_USUARIO, CURSO, ENDERECO, RG, EMAIL, CPF) values ('$login','$curso','$endereco','$rg','$email','$cpf')";
-    $salvar2 = mysqli_query($conexao, $sql2);
+        if ($usuario->getSetado() == true) {
+            insertUsuario($usuario);
+            insertAluno($aluno);
+        }
+        header("Refresh:0; url=../view/cadastro_view.php");
+        exit;
+    }
 }
 
-function arquivo()
+function arquivo_login()
 {
     if (isset($_POST['enviar'])) {
         $contador = "C:/xampp/htdocs/php/controller/reg.txt";
@@ -38,19 +38,19 @@ function arquivo()
         fwrite($id, $conteudo, strlen($conteudo) + 5);
         fclose($id);
         clearstatcache();
-        return $conteudo;
+        return strval($conteudo) . "221";
     }
 }
+
 function login_Senha()
 {
     if (isset($_POST['enviar'])) {
-        global $login;
-        global $senha;
+        global $usuario;
         echo "<div class='quadro-sucesso'>
         <h1>Cadastrado com sucesso</h1>
         <div class='container2'>
-            <p>Login:'$login'</p>
-            <p>Senha:'$senha'</p>
+            <p>Login:" . $usuario->getLogin() . "</p>
+            <p>Senha:" . $usuario->getSenha() . "</p>
             <button><a href='../../index.php'>voltar</a></button>
         </div>
     </div>";
