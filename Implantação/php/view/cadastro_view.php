@@ -29,9 +29,9 @@
                 <label for="email">Email</label>
                 <input required name="email" id="email" type="text">
                 <label for="cpf">CPF</label>
-                <input required name="cpf" id="cpf" type="text">
+                <input required name="cpf" id="cpf" type="number">
                 <label for="rg">RG</label>
-                <input required name="rg" id="rg" type="text">
+                <input required name="rg" id="rg" type="number">
 
                 <label for="endereco">Endereco</label>
                 <input required name="endereco" id="endereco" type="text">

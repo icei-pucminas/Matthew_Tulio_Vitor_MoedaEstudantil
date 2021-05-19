@@ -1,5 +1,5 @@
 <?php
-include("/xampp/htdocs/php/controller/consulta_aluno.php")
+include("/xampp/htdocs/php/controller/aluno_controller.php")
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -31,16 +31,22 @@ include("/xampp/htdocs/php/controller/consulta_aluno.php")
                 <th>CURSO</th>
                 <th>MOEDAS</th>
             </tr>
-            <?php while ($dado = $con->fetch_array()) { ?>
+            <?php
+            $alunos = consultaAluno();
+            $tamanho = count($alunos);
+            $cont = 0;
+            while ($cont < $tamanho) {
+            ?>
                 <tr>
-                    <td><?php echo $dado["CPF"]; ?></td>
-                    <td><?php echo $dado["EMAIL"]; ?></td>
-                    <td><?php echo $dado["RG"]; ?></td>
-                    <td><?php echo $dado["ENDERECO"]; ?></td>
-                    <td><?php echo $dado["CURSO"]; ?></td>
-                    <td><?php echo $dado["MOEDAS"]; ?></td>
+                    <td><?php echo $alunos[$cont]["CPF"]; ?></td>
+                    <td><?php echo $alunos[$cont]["EMAIL"]; ?></td>
+                    <td><?php echo $alunos[$cont]["RG"]; ?></td>
+                    <td><?php echo $alunos[$cont]["ENDERECO"]; ?></td>
+                    <td><?php echo $alunos[$cont]["CURSO"]; ?></td>
+                    <td><?php echo $alunos[$cont]["MOEDAS"]; ?></td>
                 </tr>
-            <?php } ?>
+            <?php $cont += 1;
+            } ?>
         </table>
     </div>
 

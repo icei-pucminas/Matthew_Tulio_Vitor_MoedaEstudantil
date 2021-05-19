@@ -40,6 +40,7 @@ body {
 
 .quadro-cadastro input[type="text"],
 .quadro-cadastro input[type="password"],
+.quadro-cadastro input[type="number"],
 .quadro-cadastro input[type="text"]:hover {
   display: block;
   border: none;
@@ -48,6 +49,16 @@ body {
   font-family: "Roboto", sans-serif;
   background: black;
   border-bottom: 1px solid rgb(10, 231, 3);
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
 }
 
 .quadro-cadastro input[type="submit"] {

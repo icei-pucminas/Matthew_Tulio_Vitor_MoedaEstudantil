@@ -6,7 +6,7 @@ require_once("/xampp/htdocs/php/model/Aluno.php");
 require_once("/xampp/htdocs/php/controller/usuario_controller.php");
 require_once("/xampp/htdocs/php/controller/aluno_controller.php");
 
-$login = arquivo_login();
+$login = cria_arquivo_login();
 cadastrar_usuario_login();
 
 function cadastrar_usuario_login()
@@ -24,7 +24,7 @@ function cadastrar_usuario_login()
     }
 }
 
-function arquivo_login()
+function cria_arquivo_login()
 {
     if (isset($_POST['enviar'])) {
         $contador = "C:/xampp/htdocs/php/controller/reg.txt";

@@ -1,4 +1,5 @@
 <?php
+require_once('/xampp/htdocs/php/controller/conexao.php');
 function criarAluno()
 {
     if (isset($_POST['cpf'])) {
@@ -13,4 +14,12 @@ function insertAluno($aluno)
     global $conexao;
     $query = "INSERT INTO aluno (LOGIN_USUARIO ,CURSO, ENDERECO, RG, EMAIL, CPF, MOEDAS) VALUES ('{$aluno->getLogin()}','{$aluno->getCurso()}','{$aluno->getEndereco()}','{$aluno->getRg()}','{$aluno->getEmail()}','{$aluno->getCpf()}', '{$aluno->getMoedas()}')";
     $conexao->exec($query);
+}
+function consultaAluno()
+{
+    global $conexao;
+    $consulta = "SELECT * FROM aluno";
+    $result = $conexao->query($consulta) or die($conexao->error);
+    $alunos = $result->fetchAll();
+    return $alunos;
 }
