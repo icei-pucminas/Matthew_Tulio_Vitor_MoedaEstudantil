@@ -19,8 +19,22 @@ function cadastrar_usuario_login()
             insertUsuario($usuario);
             insertAluno($aluno);
         }
-        header("Refresh:0; url=../view/cadastro_view.php");
+        header("Refresh:0; url=../view/cadastro_aluno_view.php");
         exit;
+    }
+}
+
+function listaInstituicao()
+{
+    $i = 0;
+    global $conexao;
+    $consulta = "SELECT * FROM INSTITUICAO";
+    $result = $conexao->query($consulta) or die($conexao->error);
+    $instituicoes = $result->fetchAll();
+    while ($i < count($instituicoes)) {
+
+        echo "<option value=" . $instituicoes[$i]["ID"] . ">" . $instituicoes[$i]["NOME"] . "</option>";
+        ++$i;
     }
 }
 

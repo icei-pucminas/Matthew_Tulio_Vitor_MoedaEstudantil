@@ -7,16 +7,18 @@ class Aluno extends Usuario
     private $rg;
     private $endereco;
     private $curso;
-    private $setado;
     private $moedas = 0;
+    private $instituicao;
+    private $setado;
 
-    public function __construct($cpf, $email, $rg, $endereco, $curso, $login)
+    public function __construct($cpf, $email, $rg, $endereco, $curso, $instituicao, $login)
     {
         $this->cpf = $cpf;
         $this->email = $email;
         $this->rg = $rg;
         $this->endereco = $endereco;
         $this->curso = $curso;
+        $this->instituicao = $instituicao;
         $this->login = $login;
         $this->setado = true;
     }
@@ -73,6 +75,15 @@ class Aluno extends Usuario
     public function setLogin($login)
     {
         return $this->login = $login;
+    }
+
+    public function getInstituicao()
+    {
+        return $this->instituicao;
+    }
+    public function setInstituicao($instituicao)
+    {
+        return $this->Instituicao = $instituicao;
     }
 
     public function getMoedas()

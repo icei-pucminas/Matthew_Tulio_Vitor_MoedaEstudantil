@@ -54,7 +54,7 @@ a {
   color: rgb(10, 231, 3);
 }
 button {
-  width: 80px;
+  width: auto;
   font-size: 15px;
   margin: 10px auto;
   display: block;

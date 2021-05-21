@@ -4,7 +4,15 @@ function criarAluno()
 {
     if (isset($_POST['cpf'])) {
         global $login;
-        $aluno = new Aluno(addslashes($_POST['cpf']), addslashes($_POST['email']), addslashes($_POST['rg']), addslashes($_POST['endereco']), addslashes($_POST['curso']), $login);
+        $aluno = new Aluno(
+            addslashes($_POST['cpf']),
+            addslashes($_POST['email']),
+            addslashes($_POST['rg']),
+            addslashes($_POST['endereco']),
+            addslashes($_POST['curso']),
+            addslashes($_POST['instituicao']),
+            $login
+        );
         return $aluno;
     }
 }
@@ -12,7 +20,9 @@ function criarAluno()
 function insertAluno($aluno)
 {
     global $conexao;
-    $query = "INSERT INTO aluno (LOGIN_USUARIO ,CURSO, ENDERECO, RG, EMAIL, CPF, MOEDAS) VALUES ('{$aluno->getLogin()}','{$aluno->getCurso()}','{$aluno->getEndereco()}','{$aluno->getRg()}','{$aluno->getEmail()}','{$aluno->getCpf()}', '{$aluno->getMoedas()}')";
+    $query = "INSERT INTO aluno (CPF ,EMAIL, RG, ENDERECO, CURSO, ID_INSTITUICAO, LOGIN_USUARIO) VALUES
+     ('{$aluno->getCpf()}','{$aluno->getEmail()}','{$aluno->getRg()}',
+     '{$aluno->getEndereco()}','{$aluno->getCurso()}','{$aluno->getInstituicao()}', '{$aluno->getLogin()}')";
     $conexao->exec($query);
 }
 function consultaAluno()

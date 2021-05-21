@@ -1,3 +1,6 @@
+<?php
+require_once("/xampp/htdocs/php/controller/cadastro_aluno_controller.php");
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -19,7 +22,7 @@
 
     <div class="container">
         <div class="quadro-cadastro">
-            <form action="/php/controller/cadastro_controller.php" method="post">
+            <form action="/php/controller/cadastro_aluno_controller.php" method="post">
                 <h2>Cadastro de alunos</h2>
                 <a href=""></a>
                 <label for="nome">Nome</label>
@@ -34,9 +37,15 @@
                 <input required name="rg" id="rg" type="number">
 
                 <label for="endereco">Endereco</label>
+
                 <input required name="endereco" id="endereco" type="text">
                 <label for="instituicao">Instituição de ensino</label>
-                <input required name="instituicao" id="instituicao" type="text">
+                <br>
+                <select name="instituicao">
+                    <?php
+                    listaInstituicao();
+                    ?>
+                </select><br>
                 <label for="curso">Curso</label>
                 <input required name="curso" id="curso" type="text">
                 <input required name="enviar" type="submit" value="Cadastrar">
@@ -46,7 +55,7 @@
 
         <?php
 
-        require_once("/xampp/htdocs/php/controller/cadastro_controller.php");
+
         login_senha();
 
         ?>
