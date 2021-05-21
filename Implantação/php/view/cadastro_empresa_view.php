@@ -1,5 +1,5 @@
 <?php
-require_once("/xampp/htdocs/php/controller/cadastro_empresa_controller.php");
+//require_once("/xampp/htdocs/php/controller/cadastro_empresa_controller.php");
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -22,7 +22,7 @@ require_once("/xampp/htdocs/php/controller/cadastro_empresa_controller.php");
 
     <div class="container">
         <div class="quadro-cadastro">
-            <form action="/php/controller/cadastro_controller.php" method="post">
+            <form action="/php/controller/cadastro_empresa_controller.php" method="post">
                 <h2>Cadastro de Empresas</h2>
                 <a href=""></a>
                 <label for="nome">Nome</label>
@@ -40,7 +40,7 @@ require_once("/xampp/htdocs/php/controller/cadastro_empresa_controller.php");
         <?php
 
 
-        login_senha();
+        //login_senha();
 
         ?>
     </div>

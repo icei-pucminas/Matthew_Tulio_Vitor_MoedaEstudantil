@@ -26,8 +26,9 @@
                 <label for="senha">Senha</label>
                 <input required name="senha" id="senha" type="password">
 
-                <button type="submit"><a href="/php/view/listagem_alunos_view.php">Entrar</a></button>
+                <button type="submit"><a href="/php/view/listagem_empresas_view.php">Entrar</a></button>
                 <button><a href="/php/view/cadastro_aluno_view.php">Cadastrar-se como aluno</a></button>
+                <button><a href="/php/view/cadastro_empresa_view.php">Cadastrar-se como Empresa</a></button>
             </form>
         </div>
     </div>
