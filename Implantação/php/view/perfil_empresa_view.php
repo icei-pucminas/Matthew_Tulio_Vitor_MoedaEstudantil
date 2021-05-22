@@ -31,10 +31,10 @@ echo "Login: " . $_SESSION['login'];
         <nav>
             <div class="menu">
                 <ul>
-                    <li><a href="/php/perfil_empresa_view.php">Perfil</a></li>
-                    <li><a href="">Cadastrar Vantagens</a></li>
-                    <li><a href="">Visualizar Vantagens</a></li>
-                    <li><a href="">Logout</a></li>
+                    <li><a href="../view/perfil_empresa_view.php">Perfil</a></li>
+                    <li><a href="../view/cadastro_vantagens_view.php">Cadastrar Vantagens</a></li>
+                    <li><a href="../view/listagem_vantagens_view.php">Visualizar Vantagens</a></li>
+                    <li><a href="../controller/logout.php">Logout</a></li>
                 </ul>
             </div>
         </nav>
