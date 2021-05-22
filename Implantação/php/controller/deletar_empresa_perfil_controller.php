@@ -10,4 +10,5 @@ $query = "DELETE FROM EMPRESA WHERE CNPJ = '{$cnpj}';";
 $conexao->exec($query);
 $query = "DELETE FROM USUARIO WHERE LOGIN = '{$login}';";
 $conexao->exec($query);
-header("Refresh:0; url=../view/listagem_empresas_view.php");
+
+header("Refresh:00; url=../../index.php");

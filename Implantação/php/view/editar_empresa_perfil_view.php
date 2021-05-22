@@ -21,13 +21,15 @@ $linha_editar = $_POST['editar']; ?>
 
     <div class="container">
         <div class="quadro-cadastro">
-            <form action="/php/controller/editar_empresa_controller.php" method="post">
+            <form action="/php/controller/editar_empresa_perfil_controller.php" method="post">
                 <h2>Editar Empresas</h2>
                 <a href=""></a>
                 <label for="nome">Nome</label>
-                <input required name="nome" id="nome" type="text">
+                <input name="nome" id="nome" type="text">
                 <label for="cnpj">CNPJ</label>
                 <input name="cnpj" id="cnpj" type="number">
+                <label for="senha">Senha</label>
+                <input name="senha" id="senha" type="password">
                 <input name="cadastrar_edicao" type="submit" value="editar">
                 <input style="display: none" name="edicao" value=<?php echo $_POST['editar']; ?>>
                 </input>

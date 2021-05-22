@@ -7,6 +7,7 @@ require_once("/xampp/htdocs/php/controller/empresa_controller.php");
 require_once("/xampp/htdocs/php/controller/professor_controller.php");
 require_once("/xampp/htdocs/php/controller/conexao.php");
 
+session_unset();
 session_start();
 validar_login();
 
@@ -30,11 +31,12 @@ function validar_login()
 
                     header("Refresh:0; url=../view/menu_professor_view.php");
                 } else {
+
                     $valida_empresa = E_empresa();
                     $_SESSION['logado'] = true;
                     $_SESSION['login'] = $_POST['login'];
 
-                    header("Refresh:0; url=../view/menu_empresa_view.php");
+                    header("Refresh:0; url=../view/perfil_empresa_view.php");
                 }
             }
         }
