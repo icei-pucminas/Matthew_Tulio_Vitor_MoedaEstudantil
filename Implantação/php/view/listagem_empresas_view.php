@@ -35,7 +35,7 @@ include("/xampp/htdocs/php/controller/empresa_controller.php");
             ?>
                 <tr>
 
-                    <form method="POST" action="/php/controller/editar_empresa_controller.php">
+                    <form method="POST" action="/php/view/editar_empresa_view.php">
                         <td><?php echo $empresas[$cont]["CNPJ"]; ?></td>
                         <td><?php echo $empresas[$cont]["NOME"]; ?></td>
                         <td><button type="submit" value=<?php echo $cont ?> name="editar">Editar</button></td>
