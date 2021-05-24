@@ -1,110 +1,80 @@
 <?php
-require_once "Usuario.php";
-class Aluno extends Usuario
-{
-    private $cpf;
-    private $email;
-    private $rg;
-    private $endereco;
-    private $curso;
-    private $moedas = 0;
-    private $instituicao;
-    private $setado;
 
-    public function __construct($cpf, $email, $rg, $endereco, $curso, $instituicao, $login)
+class Vantagem
+{
+    
+    private $id;
+    private $custo_moedas;
+    private $foto;
+    private $nome;
+    private $descricao;
+    private $cnpj_empresas;
+
+    public function __construct($id, $custo_moedas, $foto, $nome, $descricao, $cnpj_empresas)
     {
-        $this->cpf = $cpf;
-        $this->email = $email;
-        $this->rg = $rg;
-        $this->endereco = $endereco;
-        $this->curso = $curso;
-        $this->instituicao = $instituicao;
-        $this->login = $login;
+        $this->id = $id;
+        $this->custo_moedas = $custo_moedas;
+        $this->foto = $foto;
+        $this->nome = $nome;
+        $this->descricao = $descricao;
+        $this->cnpj_empresas = $cnpj_empresas;
         $this->setado = true;
     }
 
-    public function getCpf()
+    public function getId()
     {
-        return $this->cpf;
+        return $this->id;
     }
-    public function setCpf($cpf)
+    public function setId($id)
     {
-        $this->cpf = $cpf;
-    }
-
-    public function getEmail()
-    {
-        return $this->email;
-    }
-    public function setEmail($email)
-    {
-        return $this->email = $email;
+        $this->id = $id;
     }
 
-    public function getRg()
+    public function getCusto_Moedas()
     {
-        return $this->rg;
+        return $this->custo_moedas;
     }
-    public function setRg($rg)
+    public function setCusto_Moedas($custo_moedas)
     {
-        return $this->rg = $rg;
-    }
-
-    public function getEndereco()
-    {
-        return $this->endereco;
-    }
-    public function setEndereco($endereco)
-    {
-        return $this->endereco = $endereco;
+        $this->custo_moedas = $custo_moedas;
     }
 
-    public function getCurso()
+    public function getFoto()
     {
-        return $this->curso;
+        return $this->foto;
     }
-    public function setCurso($curso)
+    public function setFoto($foto)
     {
-        return $this->curso = $curso;
+        $this->foto = $foto;
     }
-
-    public function getLogin()
+    public function getNome()
     {
-        return $this->login;
+        return $this->nome;
     }
-    public function setLogin($login)
+    public function setNome($nome)
     {
-        return $this->login = $login;
-    }
-
-    public function getInstituicao()
-    {
-        return $this->instituicao;
-    }
-    public function setInstituicao($instituicao)
-    {
-        return $this->Instituicao = $instituicao;
+        $this->nome = $nome;
     }
 
-    public function getMoedas()
+    public function getDescricao()
     {
-        return $this->moedas;
+        return $this->descricao;
     }
-    public function setMoedas($moedas)
+    public function setDescricao($descricao)
     {
-        return $this->moedas = $moedas;
+        $this->descricao = $descricao;
+    }
+    public function getCNPJ_Empresa()
+    {
+        return $this->cnpj_empresas;
+    }
+    public function setCNPJ_Empresa($cnpj_empresas)
+    {
+        $this->cnpj_empresas = $cnpj_empresas;
     }
 
     public function getSetado()
     {
         return $this->setado;
-    }
-
-    public function visualizarExtrato()
-    {
-    }
-
-    public function trocarMoedasPorVantagens()
-    {
     }
 }
