@@ -2,19 +2,16 @@
 
 class Vantagem
 {
-    
+
     private $id;
     private $custo_moedas;
-    private $foto;
     private $nome;
     private $descricao;
     private $cnpj_empresas;
 
-    public function __construct($id, $custo_moedas, $foto, $nome, $descricao, $cnpj_empresas)
+    public function __construct($custo_moedas, $nome, $descricao, $cnpj_empresas)
     {
-        $this->id = $id;
         $this->custo_moedas = $custo_moedas;
-        $this->foto = $foto;
         $this->nome = $nome;
         $this->descricao = $descricao;
         $this->cnpj_empresas = $cnpj_empresas;

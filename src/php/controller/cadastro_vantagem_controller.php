@@ -10,20 +10,16 @@ cadastrar_vantagem();
 
 function cadastrar_vantagem()
 {
+
     if (isset($_POST['enviar'])) {
-       
-        $vantagem = criarVantagem();
+
+        $vantagem = criarVantagem($_POST['enviar']);
 
         if ($vantagem->getSetado() == true) {
+
             insertVantagem($vantagem);
-            
         }
-        header("Refresh:0; url=../view/cadastro_vantagem_view.php");
+        header("Refresh:0; url=../view/perfil_empresa_view.php");
         exit;
     }
 }
-
-
-
-
-

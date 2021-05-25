@@ -1,17 +1,17 @@
 <?php
 require_once('/xampp/htdocs/php/controller/conexao.php');
-function criarVantagem()
+function criarVantagem($cadastrar)
 {
-    if (isset($_POST['id'])) {
-        global $login;
+
+    if (isset($cadastrar)) {
+        echo "entrou";
         $vantagem = new Vantagem(
-            addslashes($_POST['id']),
             addslashes($_POST['custo_moeda']),
             addslashes($_POST['nome']),
-            addslashes($_POST['foto']),
             addslashes($_POST['descricao']),
-            $login
+            addslashes($_POST['cnpj'])
         );
+
         return $vantagem;
     }
 }
@@ -19,14 +19,14 @@ function criarVantagem()
 function insertVantagem($vantagem)
 {
     global $conexao;
-    $query = "INSERT INTO vantagem (ID, CUSTO_MOEDAS, FOTO, NOME, DESCRICAO, CNPJ_EMPRESA)  VALUES
-     ('{$vantagem->getId()}','{$vantagem->getCusto_Moedas()}','{$vantagem->getNome()}','{$vantagem->getDescricao()}','{$vantagem->getCNPj_Empresa()}')";
+    $query = "INSERT INTO vantagem (CUSTO_MOEDAS, NOME, DESCRICAO, CNPJ_EMPRESA)  VALUES
+     ('{$vantagem->getCusto_Moedas()}','{$vantagem->getNome()}','{$vantagem->getDescricao()}','{$vantagem->getCNPj_Empresa()}')";
     $conexao->exec($query);
 }
 function consultaVantagem()
 {
     global $conexao;
-    $consulta = "SELECT * FROM vantagem " ;
+    $consulta = "SELECT * FROM vantagem ";
     $result = $conexao->query($consulta) or die($conexao->error);
     $vantagem = $result->fetchAll();
     return $vantagem;

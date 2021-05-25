@@ -19,15 +19,15 @@
 
     <div class="container">
         <div class="quadro-cadastro">
-            <form action="/php/controller/validar_login_controller.php" method="POST">
+            <form action="./php/controller/validar_login_controller.php" method="POST">
                 <label for="login">Login</label>
                 <input required name="login" id="login" type="text">
                 <label for="senha">Senha</label>
                 <input required name="senha" id="senha" type="password">
 
                 <button name="validar" type="submit"><a>Entrar</a></button>
-                <button><a href="/php/view/cadastro_aluno_view.php">Cadastrar-se como aluno</a></button>
-                <button><a href="/php/view/cadastro_empresa_view.php">Cadastrar-se como Empresa</a></button>
+                <button><a href="./php/view/cadastro_aluno_view.php">Cadastrar-se como aluno</a></button>
+                <button><a href="./php/view/cadastro_empresa_view.php">Cadastrar-se como Empresa</a></button>
             </form>
         </div>
     </div>
