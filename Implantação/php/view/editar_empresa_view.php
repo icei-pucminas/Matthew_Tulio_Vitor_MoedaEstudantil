@@ -30,7 +30,6 @@ $linha_editar = $_POST['editar']; ?>
                 <input name="cnpj" id="cnpj" type="number">
                 <input name="cadastrar_edicao" type="submit" value="editar">
                 <input style="display: none" name="edicao" value=<?php echo $_POST['editar']; ?>>
-                </input>
             </form>
         </div>
 
