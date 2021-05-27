@@ -1,27 +1,26 @@
 <?php
-include_once("/xampp/htdocs/php/controller/conexao.php");
-include_once("/xampp/htdocs/php/controller/vantagem_controller.php");
 
-global $conexao;
-$linha_editar = $_POST["edicao"];
-$custo_moedas = $_POST['custo_moedas'];
-$foto = $_POST['foto'];
-$nome = $_POST['nome'];
-$descricao = $_POST['descricao'];
+require_once("../controller/conexao.php");
+require_once("../controller/vantagem_controller.php");
+require_once("../model/Vantagem.php");
+$id = $_POST['id'];
 
+if (isset($_POST['cadastrar_edicao'])) {
 
+    $formatosPermitidos = array("png", "jpeg", "jpg", "gif");
 
-$consulta = "SELECT * FROM vantagem";
-$result = $conexao->query($consulta) or die($conexao->error);
-$vantagem = $result->fetchAll();
-$vantagem_editada_MOEDAS = $vantagem[$linha_editar]['CUSTO_MOEDAS'];
-$vantagem_editada_FOTO = $vantagem[$linha_editar]['FOTO'];
-$vantagem_editada_NOME = $vantagem[$linha_editar]['NOME'];
-$vantagem_editada_DESCRICAO = $vantagem[$linha_editar]['DESCRICAO'];
-
-
-
-$query = "UPDATE `vantagem` SET `CUSTO_MOEDAS` = '{$custo_moedas}', `FOTO` = '{$foto}', `NOME` = '{$nome}', `DESCRICAO` = '{$descricao}' WHERE `empresa`.`CNPJ` = '{$empresa_editada_CNPJ}'";
-$conexao->exec($query);
-
-header("Refresh:0; url=../view/listagem_vantagem_view.php");
+    $extensao = pathinfo($_FILES['foto']['name'], PATHINFO_EXTENSION);
+    if (in_array($extensao, $formatosPermitidos)) {
+        $pasta = "../../Assets/";
+        $temporario = $_FILES['foto']['tmp_name'];
+        $novoNome = uniqid() . ".$extensao"; //Vai para o insert do banco de dados
+        $vantagem = criarVantagem($novoNome);
+        if ($vantagem->getSetado()) {
+            updateVantagem($vantagem, $id);
+        }
+        move_uploaded_file($temporario, $pasta . $novoNome);
+        header("Refresh:0; url=../view/listagem_vantagens_view.php");
+    } else {
+        echo "Formato inválido";
+    }
+}
