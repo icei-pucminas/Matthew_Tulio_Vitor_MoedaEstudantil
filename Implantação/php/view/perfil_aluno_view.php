@@ -1,7 +1,7 @@
 <?php
 require_once("/xampp/htdocs/php/controller/conexao.php");
 session_start();
-include("/xampp/htdocs/php/controller/professor_controller.php");
+include("/xampp/htdocs/php/controller/aluno_controller.php");
 
 
 ?>
@@ -28,8 +28,8 @@ include("/xampp/htdocs/php/controller/professor_controller.php");
         <nav>
             <div class="menu">
                 <ul>
-                    <li><a href="../view/perfil_professor_view.php">Perfil</a></li>
-                    <li><a href="../view/transferir_professor_aluno_controller.php">Transferir moedas para alunos</a></li>
+                    <li><a href="../view/perfil_aluno_view.php">Perfil</a></li>
+                    <li><a href="../view/transferir_aluno_aluno_view.php">Transferir moedas para colegas</a></li>
                     <li><a href="../controller/logout.php">Logout</a></li>
                 </ul>
             </div>
